@@ -1,0 +1,45 @@
+{
+  "systemName": "Tiddi Token Fair Global Tokenization & Post-Quantum Protocol",
+  "version": "2.0.0",
+  "auditDate": "2026-09-07",
+  "license": "MIT",
+  "author": "Martin Luther",
+  "repository": "elon00/tiddi-token",
+  "truthTaxonomy": {
+    "cryptographicCore": "PURE_TYPESCRIPT_PQC_EXECUTION",
+    "kemScheme": "NIST_FIPS_203_ML_KEM_768",
+    "signatureScheme": "NIST_FIPS_204_ML_DSA_65",
+    "smartContractStandard": "OPENZEPPELIN_ERC20_SOLIDITY_0_8_20",
+    "blockchainTarget": "HELA_TESTNET_CHAIN_ID_8668",
+    "tokenSymbol": "TIDDI",
+    "totalSupply": "2100000000000000",
+    "simulationEliminated": true,
+    "failClosedConjunction": true
+  },
+  "subsystems": [
+    {
+      "name": "TiddiSmartContract",
+      "path": "contracts/Tiddi.sol",
+      "nature": "ON_CHAIN_ERC20_SOLIDITY",
+      "verified": true
+    },
+    {
+      "name": "PqcCryptoEngine",
+      "path": "src/utils/pqcCrypto.ts",
+      "nature": "POST_QUANTUM_CRYPTO_CORE",
+      "verified": true
+    },
+    {
+      "name": "HardhatTestingFramework",
+      "path": "test/Tiddi.test.js",
+      "nature": "INVARIANT_SMART_CONTRACT_TESTS",
+      "verified": true
+    },
+    {
+      "name": "WycheproofAdversarialAudit",
+      "path": "tests/nist-pqc.test.mjs",
+      "nature": "NIST_STANDARDS_VERIFICATION",
+      "verified": true
+    }
+  ]
+}
